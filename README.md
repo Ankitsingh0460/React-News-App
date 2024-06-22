@@ -5,6 +5,11 @@
 #npm run dev
 ![Screenshot 2024-06-21 102214](https://github.com/Ankitsingh0460/React-News-App/assets/101083216/6fcae8e1-414b-44b4-861e-8eff8cca81b8)
 
+#Pagging
+
+![image](https://github.com/Ankitsingh0460/React-News-App/assets/101083216/cbbd6be0-ec22-4772-b290-a1ba94bad2d3)
+
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
