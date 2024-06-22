@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
 import CategoryCard from "./CategoryCard";
-import { useState } from "react";
-
+import { useContext, useState } from "react";
+import { CounterContext } from "./Navbar";
 function Category() {
-  const { category } = useSelector((state) => state.news);
+  const category = useContext(CounterContext);
   const [postPerPage, setPostPerPage] = useState(8);
   const [currentPage, SetCurrentPage] = useState(1);
 

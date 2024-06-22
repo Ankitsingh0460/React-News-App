@@ -1,10 +1,12 @@
-import { useDispatch } from "react-redux";
-import { setNews } from "./slices/newsSlice";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import { createContext, useState } from "react";
+import Category from "./Category";
 
+export const CounterContext = createContext();
 function Navbar() {
-  const dispatch = useDispatch();
+  const [data, alldatas] = useState([]);
+
   const navigate = useNavigate();
   const handleClickButton = async (item) => {
     try {
@@ -13,8 +15,9 @@ function Navbar() {
       );
       const parsedData = response?.data;
       const alldata = parsedData?.articles;
+      alldatas(alldata);
       console.log("gate first" + alldata);
-      dispatch(setNews(alldata));
+
       navigate(`/detail/:${item}`);
     } catch (error) {
       console.error(error);
@@ -23,6 +26,9 @@ function Navbar() {
 
   return (
     <>
+      <CounterContext.Provider value={data}>
+        <Category />
+      </CounterContext.Provider>
       <nav className="navbar navbar-expand-lg tw-bg-slate-900 tw-sticky tw-top-0  tw-w-screen tw-z-50">
         <div className="container-fluid tw-ml-10 tw-mr-10   ">
           <Link
