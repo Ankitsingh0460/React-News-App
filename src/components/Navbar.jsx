@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setNews } from "./slices/newsSlice";
-import axios, { all } from "axios";
+import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
-  const [theme, setTheme] = useState();
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleClickButton = async (item) => {
@@ -74,7 +71,7 @@ function Navbar() {
               </li>
               <li className="tw-mt-2">
                 <Link
-                  to="/detail/entertainment tw-text-white"
+                  to="/detail/entertainment"
                   className="tw-text-lg tw-mr-4 tw-text-slate-300"
                   onClick={() => handleClickButton("entertainment")}
                 >

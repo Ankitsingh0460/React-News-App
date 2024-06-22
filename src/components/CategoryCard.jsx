@@ -4,7 +4,10 @@ function CategoryCard({ title, description, image, url }) {
   return (
     <>
       <div className="tw-mt-4   tw-rounded-lg">
-        <div className="card tw-min-h-[400px]" style={{ width: "18rem" }}>
+        <div
+          className="card tw-min-h-[400px] tw-border-black hover:tw-scale-105 tw-duration-300"
+          style={{ width: "18rem" }}
+        >
           <img
             src={image}
             className="card-img-top tw-object-none tw-h-44 tw-w-80"

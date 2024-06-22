@@ -6,7 +6,7 @@ import LoadingScreen from "./LoadingScreen";
 function News() {
   const [news, setNews] = useState([]);
   const [fetching, setFetching] = useState(false);
-  const [postPerPage, setPostPerPage] = useState(8);
+  const [postPerPage, setPostPerPage] = useState(12);
   const [currentPage, SetCurrentPage] = useState(1);
 
   const lastIndex = currentPage * postPerPage;
@@ -72,25 +72,40 @@ function News() {
         </div>
         {news ? (
           <div>
-            <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-center">
-                <li class="page-item ">
-                  <a class="page-link" href="#" onClick={() => prePage()}>
+            <nav
+              aria-label="Page navigation example "
+              className="tw-bg-slate-700"
+            >
+              <ul className="pagination justify-content-center tw-bg-slate-700">
+                <li className="page-item ">
+                  <a
+                    className="page-link tw-bg-slate-700 tw-text-white"
+                    href="#"
+                    onClick={() => prePage()}
+                  >
                     Previous
                   </a>
                 </li>
                 {number.map((n, k) => (
                   <li
-                    class={`page-item ${currentPage === n ? "active" : ""}`}
+                    className={`page-item ${currentPage === n ? "active" : ""}`}
                     key={k}
                   >
-                    <a class="page-link" href="#" onClick={() => changePage(n)}>
+                    <a
+                      className="page-link tw-bg-slate-700 tw-text-white"
+                      href="#"
+                      onClick={() => changePage(n)}
+                    >
                       {n}
                     </a>
                   </li>
                 ))}
-                <li class="page-item">
-                  <a class="page-link" href="#" onClick={() => nextPage()}>
+                <li className="page-item">
+                  <a
+                    className="page-link tw-bg-slate-700 tw-text-white"
+                    href="#"
+                    onClick={() => nextPage()}
+                  >
                     Next
                   </a>
                 </li>
